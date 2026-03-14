@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LEVO – The Experts in Standing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      :root {
+        --primary: #c92525;
+        --secondary: #5c5c5c;
+        --accent: #f04b3e;
+        --bg-light: #f4f4f4;
+        --bg-dark: #1f1f1f;
+        --text-dark: #333333;
+        --text-light: #ffffff;
+        --card-bg: #ffffff;
+        --border-soft: #e5e5e5;
+        --shadow-soft: 0 15px 35px rgba(0, 0, 0, 0.08);
+        --radius-lg: 18px;
+        --radius-md: 12px;
+        --radius-pill: 999px;
+        --transition-fast: 0.25s ease;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        color: var(--text-dark);
+        background: #f8f8f8;
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      button {
+        font-family: inherit;
+      }
+
+      .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Global utility */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1.8rem;
+        border-radius: var(--radius-pill);
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, var(--primary), #ff5959);
+        color: var(--text-light);
+        box-shadow: 0 10px 25px rgba(201, 37, 37, 0.35);
+        transition: transform var(--transition-fast),
+          box-shadow var(--transition-fast), background var(--transition-fast),
+          opacity var(--transition-fast);
+      }
+
+      .btn:hover,
+      .btn:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 32px rgba(201, 37, 37, 0.5);
+        opacity: 0.95;
+        outline: none;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 0.75rem;
+        color: var(--text-dark);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: var(--secondary);
+        max-width: 640px;
+        margin: 0 auto 2.5rem;
+        font-size: 0.98rem;
+      }
+
+      .highlight-red {
+        color: var(--primary);
+      }
+
+      .chip-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        border-radius: var(--radius-pill);
+        background: rgba(201, 37, 37, 0.08);
+        padding: 0.3rem 0.85rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* HEADER & NAV */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.7rem 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .brand-area {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .brand-logo {
+        width: 140px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .brand-tagline {
+        font-size: 0.7rem;
+        color: var(--secondary);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        font-size: 0.88rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .nav-links a {
+        position: relative;
+        color: var(--secondary);
+        font-weight: 500;
+        padding-bottom: 0.2rem;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--primary);
+        transition: width var(--transition-fast);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
+        width: 100%;
+      }
+
+      .nav-utility {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.8rem;
+        color: var(--secondary);
+      }
+
+      .nav-utility a {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .lang-switch {
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 0.25rem 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.78rem;
+      }
+
+      .nav-login {
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      /* Mobile nav */
+      .nav-toggle {
+        display: none;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 0.4rem;
+        border-radius: 999px;
+      }
+
+      .nav-toggle:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+      }
+
+      .nav-toggle i {
+        font-size: 1.4rem;
+        color: var(--text-dark);
+      }
+
+      /* MOBILE MENU HIDDEN BY DEFAULT ON DESKTOP */
+      .mobile-menu {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-utility {
+          display: none;
+        }
+
+        .nav-toggle {
+          display: inline-flex;
+        }
+
+        .nav-container {
+          padding: 0.5rem 16px;
+        }
+
+        .mobile-menu {
+          position: fixed;
+          inset: 60px 16px auto 16px;
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.97);
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+          padding: 1.1rem 1.4rem 1.4rem;
+          display: none;
+          flex-direction: column;
+          gap: 1.25rem;
+          z-index: 40;
+        }
+
+        .mobile-menu.open {
+          display: flex;
+        }
+
+        .mobile-menu-section {
+          border-top: 1px dashed rgba(0, 0, 0, 0.08);
+          padding-top: 0.9rem;
+        }
+
+        .mobile-menu-links a {
+          display: block;
+          padding: 0.35rem 0;
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 0.18em;
+          color: var(--text-dark);
+        }
+
+        .mobile-menu-utility {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.7rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      /* HERO SECTION */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(
+          circle at top left,
+          #ffffff 0,
+          #f3f3f3 32%,
+          #e6e6e6 100%
+        );
+      }
+
+      .hero-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4.5rem 20px 4rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .hero-media {
+        position: relative;
+      }
+
+      .hero-photo-large {
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+        transform: translateY(0);
+      }
+
+      .hero-photo-large img {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        filter: grayscale(100%);
+      }
+
+      .hero-photo-tag {
+        position: absolute;
+        bottom: 20px;
+        left: 26px;
+        padding: 0.4rem 0.9rem;
+        font-size: 0.7rem;
+        background: rgba(0, 0, 0, 0.5);
+        color: var(--text-light);
+        border-radius: var(--radius-pill);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-info-panel {
+        position: absolute;
+        right: -28px;
+        top: 44px;
+        width: 270px;
+        border-radius: 22px;
+        padding: 1.4rem 1.5rem;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(14px);
+      }
+
+      .hero-info-panel h3 {
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        color: var(--secondary);
+      }
+
+      .hero-info-panel h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero-info-panel p {
+        font-size: 0.78rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
+
+      .hero-copy {
+        position: relative;
+        padding-left: 0.4rem;
+      }
+
+      .hero-kicker {
+        margin-bottom: 0.75rem;
+      }
+
+      .hero-heading {
+        font-family: "Playfair Display", serif;
+        font-size: 2.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        margin-bottom: 0.9rem;
+        line-height: 1.25;
+      }
+
+      .hero-heading span {
+        display: block;
+      }
+
+      .hero-lead {
+        font-size: 0.98rem;
+        color: var(--secondary);
+        max-width: 420px;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-cta-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.75rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-cta-secondary {
+        font-size: 0.85rem;
+        color: var(--secondary);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .hero-cta-secondary i {
+        color: var(--primary);
+        font-size: 0.85rem;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+        font-size: 0.8rem;
+        color: var(--secondary);
+      }
+
+      .hero-meta-item span {
+        display: block;
+      }
+
+      .hero-meta-label {
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0.18rem;
+        font-size: 0.72rem;
+        color: #9b9b9b;
+      }
+
+      .hero-meta-value {
+        font-weight: 600;
+      }
+
+      @media (max-width: 992px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          padding-top: 3.3rem;
+        }
+        .hero-media {
+          order: -1;
+        }
+        .hero-photo-large img {
+          height: 360px;
+        }
+        .hero-info-panel {
+          position: static;
+          width: 100%;
+          margin-top: 1.5rem;
+        }
+        .hero-heading {
+          font-size: 2.2rem;
+          letter-spacing: 0.2em;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .hero-inner {
+          padding: 3rem 16px 3.2rem;
+        }
+
+        .hero-photo-large img {
+          height: 320px;
+        }
+
+        .hero-heading {
+          font-size: 1.7rem;
+          letter-spacing: 0.16em;
+        }
+
+        .hero-meta {
+          gap: 1rem;
+        }
+      }
+
+      /* WAVE DIVIDERS */
+      .wave-divider {
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+      }
+
+      .wave-divider svg {
+        display: block;
+        width: 100%;
+        height: 60px;
+      }
+
+      /* EXPERTS SECTION */
+      .experts-section {
+        background: #ffffff;
+        padding: 3.5rem 0 3rem;
+      }
+
+      .experts-title {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-bottom: 2.2rem;
+      }
+
+      .experts-title .highlight-red {
+        font-weight: 700;
+      }
+
+      .experts-layout {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr);
+        gap: 2.3rem;
+        align-items: center;
+      }
+
+      .experts-photo {
+        border-radius: 26px;
+        overflow: hidden;
+        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22);
+      }
+
+      .experts-photo img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        filter: grayscale(100%);
+      }
+
+      .experts-panel {
+        padding: 1.75rem 1.9rem;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #f6f6f6, #fdfdfd);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .experts-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at top left,
+          rgba(201, 37, 37, 0.18),
+          transparent 60%
+        );
+        opacity: 0.8;
+        pointer-events: none;
+      }
+
+      .experts-panel-inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .experts-panel h3 {
+        font-size: 0.95rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 0.9rem;
+        color: var(--secondary);
+      }
+
+      .experts-panel h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.45rem;
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .experts-panel p {
+        font-size: 0.86rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
+
+      .experts-panel .btn {
+        margin-top: 0.4rem;
+      }
+
+      @media (max-width: 960px) {
+        .experts-layout {
+          grid-template-columns: 1fr;
+        }
+        .experts-photo img {
+          height: 320px;
+        }
+        .experts-panel {
+          padding: 1.4rem 1.5rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .experts-section {
+          padding: 2.8rem 0 2.4rem;
+        }
+        .experts-title {
+          font-size: 1.3rem;
+          letter-spacing: 0.18em;
+        }
+        .experts-photo img {
+          height: 280px;
+        }
+      }
+
+      /* CATEGORY INTRO */
+      .category-intro {
+        padding: 2.8rem 0 1.2rem;
+        background: #f7f7f7;
+      }
+
+      .category-grid-header {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 2.1rem;
+        align-items: center;
+      }
+
+      .category-heading-block h3 {
+        font-size: 0.9rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--secondary);
+        margin-bottom: 0.55rem;
+      }
+
+      .category-heading-block h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 0.7rem;
+      }
+
+      .category-heading-block p {
+        font-size: 0.9rem;
+        color: var(--secondary);
+        max-width: 520px;
+      }
+
+      .category-label-card {
+        background: linear-gradient(145deg, #ffffff, #f2f2f2);
+        padding: 1.4rem 1.6rem;
+        border-radius: 22px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+      }
+
+      .category-label-card h4 {
+        font-size: 1.05rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+        color: var(--primary);
+      }
+
+      .category-label-card h5 {
+        font-size: 0.85rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 0.55rem;
+        color: var(--secondary);
+      }
+
+      .category-label-card p {
+        font-size: 0.8rem;
+        color: var(--secondary);
+      }
+
+      @media (max-width: 900px) {
+        .category-grid-header {
+          grid-template-columns: 1fr;
+        }
+        .category-intro {
+          padding: 2.4rem 0 1.2rem;
+        }
+      }
+
+      /* PRODUCT GRID */
+      .products-section {
+        padding: 2rem 0 3.4rem;
+        background: #f7f7f7;
+      }
+
+      .products-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.4rem;
+      }
+
+      .product-card {
+        background: var(--card-bg);
+        border-radius: 22px;
+        padding: 2.1rem 1.8rem 1.4rem;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid var(--border-soft);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        transition: transform var(--transition-fast),
+          box-shadow var(--transition-fast), border-color var(--transition-fast),
+          background var(--transition-fast);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at top,
+          rgba(201, 37, 37, 0.06),
+          transparent 55%
+        );
+        opacity: 0;
+        transition: opacity var(--transition-fast);
+        pointer-events: none;
+      }
+
+      .product-card:hover::before {
+        opacity: 1;
+      }
+
+      .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
+        border-color: rgba(201, 37, 37, 0.35);
+      }
+
+      .product-media {
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+      }
+
+      .product-media img {
+        max-height: 225px;
+        object-fit: contain;
+      }
+
+      .product-name {
+        font-size: 0.9rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .products-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          padding: 0 16px;
+        }
+        .product-card {
+          padding: 1.7rem 1.5rem 1.2rem;
+        }
+      }
+
+      /* POWERED SECTION */
+      .powered-intro {
+        background: #ffffff;
+        padding: 3rem 0 1.2rem;
+      }
+
+      .powered-intro-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+        gap: 2.2rem;
+        align-items: center;
+      }
+
+      .powered-heading h3 {
+        font-size: 0.9rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--secondary);
+        margin-bottom: 0.4rem;
+      }
+
+      .powered-heading h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 0.6rem;
+        color: var(--primary);
+      }
+
+      .powered-heading h4 {
+        font-size: 0.9rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--secondary);
+        margin-bottom: 0.7rem;
+      }
+
+      .powered-heading p {
+        font-size: 0.88rem;
+        color: var(--secondary);
+        max-width: 560px;
+      }
+
+      .powered-photo {
+        border-radius: 26px;
+        overflow: hidden;
+        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22);
+      }
+
+      .powered-photo img {
+        height: 320px;
+        object-fit: cover;
+        filter: grayscale(100%);
+      }
+
+      @media (max-width: 900px) {
+        .powered-intro-inner {
+          grid-template-columns: 1fr;
+        }
+        .powered-photo img {
+          height: 280px;
+        }
+        .powered-intro {
+          padding: 2.5rem 0 1.4rem;
+        }
+      }
+
+      /* CONTACT + FOOTER */
+      .footer-section {
+        background: #f1f1f1;
+        padding: 3rem 0 1.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .footer-main {
+        max-width: 1200px;
+        margin: 0 auto 1.5rem;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+        gap: 3rem;
+      }
+
+      .footer-brand-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+      }
+
+      .footer-logo {
+        width: 160px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .footer-company-name {
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--secondary);
+      }
+
+      .footer-address {
+        font-size: 0.82rem;
+        color: var(--secondary);
+        line-height: 1.7;
+      }
+
+      .footer-address a {
+        color: var(--primary);
+        font-weight: 500;
+      }
+
+      .footer-meta-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        font-size: 0.78rem;
+        color: var(--secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+
+      .footer-meta-links a {
+        color: var(--secondary);
+      }
+
+      .footer-meta-links a:hover {
+        color: var(--primary);
+      }
+
+      .contact-card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 1.8rem 1.8rem 1.6rem;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+
+      .contact-card h3 {
+        font-size: 0.9rem;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        margin-bottom: 0.35rem;
+        color: var(--primary);
+      }
+
+      .contact-card h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        margin-bottom: 1.1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .contact-form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-form-grid .full-width {
+        grid-column: 1 / -1;
+      }
+
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        font-size: 0.8rem;
+        color: var(--secondary);
+      }
+
+      .form-field label {
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 500;
+      }
+
+      .form-field input,
+      .form-field textarea {
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 0.55rem 0.7rem;
+        font-size: 0.85rem;
+        font-family: inherit;
+        outline: none;
+        background: #fafafa;
+        transition: border-color var(--transition-fast),
+          box-shadow var(--transition-fast), background var(--transition-fast);
+      }
+
+      .form-field input:focus-visible,
+      .form-field textarea:focus-visible {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 1px rgba(201, 37, 37, 0.25);
+        background: #ffffff;
+      }
+
+      .form-field textarea {
+        resize: vertical;
+        min-height: 110px;
+      }
+
+      .contact-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.7rem;
+      }
+
+      .contact-actions .btn {
+        padding-inline: 1.4rem;
+      }
+
+      .contact-note {
+        font-size: 0.72rem;
+        color: var(--secondary);
+      }
+
+      @media (max-width: 900px) {
+        .footer-main {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding: 0 16px;
+        }
+        .contact-card {
+          padding: 1.5rem 1.4rem 1.4rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .contact-form-grid {
+          grid-template-columns: 1fr;
+        }
+        .contact-actions {
+          justify-content: flex-start;
+        }
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.72rem;
+        color: var(--secondary);
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        padding-top: 0.9rem;
+      }
+
+      .footer-bottom span {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .footer-bottom a {
+        color: var(--secondary);
+      }
+
+      .footer-bottom a:hover {
+        color: var(--primary);
+      }
+
+      @media (max-width: 600px) {
+        .footer-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0.9rem 16px 0;
+        }
+      }
+
+      /* BACK TO TOP BUTTON */
+      #backToTop {
+        position: fixed;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        border: none;
+        background: rgba(0, 0, 0, 0.8);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(16px);
+        transition: opacity var(--transition-fast),
+          visibility var(--transition-fast), transform var(--transition-fast),
+          background var(--transition-fast);
+        z-index: 40;
+      }
+
+      #backToTop:hover,
+      #backToTop:focus-visible {
+        background: var(--primary);
+        outline: none;
+      }
+
+      #backToTop.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER / NAVIGATION -->
+    <header>
+      <div class="nav-container">
+        <a href="#top" class="brand-area" aria-label="LEVO home">
+          <img src="LEVO_Logo_50.png" alt="LEVO logo" class="brand-logo" />
+          <div class="brand-tagline">THE EXPERTS IN STANDING</div>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#hero">Home</a>
+          <a href="#manual-wheelchairs">Products</a>
+          <a href="#footer">Our Partners</a>
+        </nav>
+        <div class="nav-utility">
+          <div class="lang-switch">
+            <i class="fa-solid fa-globe"></i>
+            <span>EN</span>
+          </div>
+          <a href="#login" class="nav-login">LOG IN</a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-section mobile-menu-links">
+          <a href="#hero">Home</a>
+          <a href="#manual-wheelchairs">Products</a>
+          <a href="#footer">Our Partners</a>
+        </div>
+        <div class="mobile-menu-section mobile-menu-utility">
+          <span class="lang-switch"
+            ><i class="fa-solid fa-globe"></i><span>EN</span></span
+          >
+          <a href="#login" class="nav-login">LOG IN</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main id="top">
+      <section id="hero" class="hero">
+        <div class="hero-inner">
+          <div class="hero-copy fade-in">
+            <div class="hero-kicker chip-label">
+              <i class="fa-solid fa-circle-dot"></i>
+              <span>Since 1975</span>
+            </div>
+            <h1 class="hero-heading">
+              <span>WELCOME TO LEVO!</span>
+            </h1>
+            <p class="hero-lead">
+              Since 1975, LEVO produces a complete range of high quality
+              standing wheelchairs. Discover the full range of LEVO wheelchairs
+              below.
+            </p>
+            <div class="hero-cta-row">
+              <a href="#manual-wheelchairs" class="btn">
+                Discover the full range
+              </a>
+              <a href="#manual-wheelchairs" class="hero-cta-secondary">
+                <i class="fa-solid fa-circle-arrow-down"></i>
+                <span>Scroll to wheelchairs</span>
+              </a>
+            </div>
+            <div class="hero-meta">
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Founded</span>
+                <span class="hero-meta-value">1975</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Speciality</span>
+                <span class="hero-meta-value">Standing wheelchairs</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Global</span>
+                <span class="hero-meta-value">Worldwide partners</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-media fade-in">
+            <div class="hero-photo-large">
+              <img
+                src="DSC_0757.jpg"
+                alt="Person in standing wheelchair by the water"
+                loading="lazy"
+              />
+              <div class="hero-photo-tag">
+                <i class="fa-solid fa-person-arrow-up-from-line"></i>
+                <span>Standing freedom</span>
+              </div>
+            </div>
+            <aside class="hero-info-panel" aria-label="Welcome to LEVO">
+              <h3>WELCOME TO LEVO!</h3>
+              <h2>The experts in standing</h2>
+              <p>
+                Since 1975, LEVO produces a complete range of high quality
+                standing wheelchairs. Discover the full range of LEVO
+                wheelchairs below.
+              </p>
+              <!-- SECONDARY BUTTON NOW SAME STYLE -->
+              <a href="#manual-wheelchairs" class="btn">
+                View LEVO wheelchairs
+              </a>
+            </aside>
+          </div>
+        </div>
+        <div class="wave-divider" aria-hidden="true">
+          <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+            <path
+              fill="#ffffff"
+              d="M0,30 C240,80 480,-20 720,30 C960,80 1200,-10 1440,30 L1440,90 L0,90 Z"
+            ></path>
+          </svg>
+        </div>
+      </section>
+
+      <!-- EXPERTS SECTION -->
+      <section class="experts-section" id="experts">
+        <h2 class="experts-title fade-in">
+          LEVO, THE <span class="highlight-red">EXPERTS</span> IN STANDING
+        </h2>
+        <div class="experts-layout">
+          <div class="experts-photo fade-in">
+            <img
+              src="DSC_1740.jpg"
+              alt="Manual standing wheelchair by a bridge"
+              loading="lazy"
+            />
+          </div>
+          <aside class="experts-panel fade-in">
+            <div class="experts-panel-inner">
+              <h3>MANUAL</h3>
+              <h2>WHEELCHAIRS</h2>
+              <p>
+                LEVO produces two different configurations of manual standing
+                wheelchairs: chairs with full drive and manual standing (MMS)
+                and chairs with manual drive and powered standing (MPE).
+              </p>
+              <button class="btn" type="button">Explore manual models</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- MANUAL CATEGORY INTRO -->
+      <section class="category-intro" id="manual-wheelchairs">
+        <div class="category-grid-header">
+          <div class="category-heading-block fade-in">
+            <h3>Manual wheelchairs</h3>
+            <h2>Discover the range</h2>
+            <p>
+              Explore LEVO’s manual standing wheelchairs including LAE, LCEV,
+              KID&amp;JUNIOR, SUMMIT EL and SUMMIT MA. Each product is designed
+              to support an active, independent lifestyle.
+            </p>
+          </div>
+          <div class="category-label-card fade-in">
+            <h4>MANUAL</h4>
+            <h5>STANDING WHEELCHAIRS</h5>
+            <p>
+              LEVO produces two different configurations of manual standing
+              wheelchairs: chairs with full drive and manual standing (MMS) and
+              chairs with manual drive and powered standing (MPE).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MANUAL PRODUCTS GRID -->
+      <section class="products-section">
+        <div class="products-grid">
+          <article
+            class="product-card fade-in"
+            aria-label="LAE manual standing wheelchair"
+          >
+            <div class="product-media">
+              <img
+                src="LAE_seated_350x350.png"
+                alt="LAE manual standing wheelchair"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-name">LAE</div>
+          </article>
+          <article
+            class="product-card fade-in"
+            aria-label="LCEV manual standing wheelchair"
+          >
+            <div class="product-media">
+              <img
+                src="LCEV_seated_350x350.png"
+                alt="LCEV manual standing wheelchair"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-name">LCEV</div>
+          </article>
+          <article
+            class="product-card fade-in"
+            aria-label="KID&amp;JUNIOR standing wheelchair"
+          >
+            <div class="product-media">
+              <img
+                src="KJ-chair-only-e1745580774858.png"
+                alt="KID and JUNIOR standing wheelchairs"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-name">KID&amp;JUNIOR</div>
+          </article>
+          <article
+            class="product-card fade-in"
+            aria-label="SUMMIT EL manual standing wheelchair"
+          >
+            <div class="product-media">
+              <img
+                src="Summit_seated_350x350.png"
+                alt="SUMMIT EL manual standing wheelchair"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-name">SUMMIT EL</div>
+          </article>
+          <article
+            class="product-card fade-in"
+            aria-label="SUMMIT MA manual standing wheelchair"
+          >
+            <div class="product-media">
+              <img
+                src="Summit-MA-stehend.png"
+                alt="SUMMIT MA standing wheelchair"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-name">SUMMIT MA</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- POWERED INTRO SECTION -->
+      <section class="powered-intro" id="powered-wheelchairs">
+        <div class="wave-divider" aria-hidden="true">
+          <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+            <path
+              fill="#f7f7f7"
+              d="M0,60 C240,20 480,110 720,60 C960,10 1200,100 1440,60 L1440,0 L0,0 Z"
+            ></path>
+          </svg>
+        </div>
+        <div class="powered-intro-inner">
+          <div class="powered-heading fade-in">
+            <h3>Powered wheelchairs</h3>
+            <h2>POWERED</h2>
+            <h4>STANDING WHEELCHAIRS</h4>
+            <p>
+              Experience the comfort and convenience of powered standing
+              wheelchairs from LEVO, including models C3, COMBI and LCM2,
+              designed to bring users smoothly from sitting to standing.
+            </p>
+          </div>
+          <div class="powered-photo fade-in">
+            <img
+              src="Image_3-e1737984657280-725x551.png"
+              alt="Powered standing wheelchair at the lakeside"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- POWERED PRODUCTS GRID -->
+      <section class="products-section">
+        <div class="products-grid">
+          <article
+            class="product-card fade-in"
+            aria-label="C3 powered standing wheelchair"
+          >
+            <div class="product-media">
+              <img
+                src="C3_750x750_seat.png"
+                alt="C3 powered standing wheelchair"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-name">C3</div>
+          </article>
+          <article
+            class="product-card fade-in"
+            aria-label="COMBI powered standing wheelchair"
+          >
+            <div class="product-media">
+              <img
+                src="Combi_750x750_seat.png"
+                alt="COMBI powered standing wheelchair"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-name">COMBI</div>
+          </article>
+          <article
+            class="product-card fade-in"
+            aria-label="LCM2 powered standing wheelchair"
+          >
+            <div class="product-media">
+              <img
+                src="LCM2_750x750_seat.png"
+                alt="LCM2 powered standing wheelchair"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-name">LCM2</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER & CONTACT -->
+    <footer id="footer" class="footer-section">
+      <div class="footer-main">
+        <div class="footer-brand-block fade-in">
+          <div>
+            <img
+              src="LEVO_Logo_50.png"
+              alt="LEVO logo"
+              class="footer-logo"
+              loading="lazy"
+            />
+          </div>
+          <div class="footer-company-name">LEVO AG</div>
+          <div class="footer-address">
+            Arbglenstrasse 20<br />
+            CH-6410 Goldau<br />
+            Switzerland<br /><br />
+            T +41 41 855 70 00<br />
+            F +41 41 855 70 01<br />
+            E <a href="mailto:office@levo.ch">office@levo.ch</a>
+          </div>
+          <div class="footer-meta-links">
+            <a href="#hero">Home</a>
+            <a href="#manual-wheelchairs">Products</a>
+            <a href="#powered-wheelchairs">Powered</a>
+            <a href="#login">Log in</a>
+          </div>
+        </div>
+
+        <div class="contact-card fade-in" id="login">
+          <h3>Tell us what moves you!</h3>
+          <h2>Get in touch</h2>
+          <form action="#" method="post">
+            <div class="contact-form-grid">
+              <div class="form-field">
+                <label for="contact-name">Name</label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-field">
+                <label for="contact-email">Email Address</label>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                />
+              </div>
+              <div class="form-field full-width">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message"></textarea>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <span class="contact-note"
+                >Your message will be forwarded to LEVO.</span
+              >
+              <button class="btn" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span
+          >LEVO AG &copy; Built by WPGuru
+          <script>
+            document.write(new Date().getFullYear());
+          </script></span
+        >
+        <div>
+          <a href="#top">Back to homepage</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" aria-label="Back to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+      // Mobile nav toggle
+      const navToggle = document.querySelector(".nav-toggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      if (navToggle && mobileMenu) {
+        navToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("open");
+          const expanded =
+            navToggle.getAttribute("aria-expanded") === "true" || false;
+          navToggle.setAttribute("aria-expanded", !expanded);
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      // Scroll-triggered fade-in animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+
+      // Back to top button
+      const backToTopBtn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.add("show");
+        } else {
+          backToTopBtn.classList.remove("show");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
